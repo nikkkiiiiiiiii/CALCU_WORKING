@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altura_CALCU_WORKING</title>
+    <link rel="stylesheet" href="stylee.css" />
+</head>
+<body>
+    <!-- This is my title or heading -->
+    <div class = "title"  align="center">  
+        My Working Calculator 
+    </div>
+    <hr style="height: 5px;
+           background: #5fa7f8;
+           margin: 20px 0;
+           box-shadow: 0px 0px 4px 2px rgba(204,204,204,1);"> 
+
+    <!-- This is my Calculator Body -->
+<div class="calc-body">
+
+    <!-- This is my Calculator Display Screen -->
+
+    <div class="calc-screen">
+        <div class="calc-answer" id="display"> </div>
+        <div class="calc-typed" id="display"> </div>
+    </div>
+
+    <div class="calc-screen">
+        <div class="calc-answer" id="display"> </div>
+    </div>
+    
+
+    <!-- This is my Calculator Buttons -->
+    <div class="calc-button-row">
+        <button class="ac" onclick="clearDisplay()">AC</button>
+        <button class="opt">&#43;&#47;&#8722;</button>
+        <button class="opt">&#37;</button>
+        <button class="opt" onclick="divide()">&#247;</button>
+        <button onclick="appendNumber(7)" value="7">7</button>
+        <button onclick="appendNumber(8)" value="8">8</button>
+        <button onclick="appendNumber(9)" value="9">9</button>
+        <button class="opt" onclick="multiply()">&#215;</button>
+        <button onclick="appendNumber(4)" value="4">4</button>
+        <button onclick="appendNumber(5)" value="5">5</button>
+        <button onclick="appendNumber(6)" value="6">6</button>
+        <button class="opt" onclick="minus()">&#8722;</button>
+        <button onclick="appendNumber(1)" value="1">1</button>
+        <button onclick="appendNumber(2)" value="2">2</button>
+        <button onclick="appendNumber(3)" value="3">3</button>
+        <button class="opt" onclick="add()">&#43;</button>
+        <button onclick="appendNumber(0)" value="0">0</button>
+        <button onclick="appendNumber('.')" value=".">.</button>
+        <button onclick="del()">&#9003;</button>
+        <button class="opt" onclick="calculate()">&#61;</button>
+    </div>
+    </div> 
+
+<hr style="height: 5px;
+           background: #5fa7f8;
+           margin: 20px 0;
+           box-shadow: 0px 0px 4px 2px rgba(204,204,204,1);">
+<div class = "ending"  align="center">  
+    Submitted by: NIKKI ALTURA<br>
+    Activity 3 in WS101
+</br>
+</div>
+
+<script>
+
+    let currentInput = "";
+    let currentOperator = "";
+
+    function clearDisplay() {
+        currentInput = "";
+        currentOperator = "";
+        document.getElementById('display').textContent = "";
+    } 
+
+    function clearDisplay() {
+        currentInput = "";
+        currentOperator = "";
+        document.getElementById('display').textContent = "";
+    }
+
+    function appendNumber(number) {
+        currentInput += number;
+        document.getElementById('display').textContent = currentInput;
+    }
+
+    function divide() {
+        currentInput += "/";
+        document.getElementById("display").textContent = currentInput;
+    }
+
+    function multiply() {
+        currentInput += "*";
+        document.getElementById("display").textContent = currentInput;
+    }
+
+    function minus() {
+        currentInput += "-";
+        document.getElementById("display").textContent = currentInput;
+    }
+
+    function add() {
+        currentInput += "+";
+        document.getElementById("display").textContent = currentInput;
+    }
+
+    function displaySolution() {
+        const result = eval(currentInput);
+        document.getElementById("display").textContent = currentInput;
+    }
+    function calculate() {
+        const result = eval(currentInput);
+        document.getElementById("display").textContent = result;
+    }
+
+    function del() {
+        currentInput = currentInput.slice(0, -1);
+        document.getElementById("display").textContent = currentInput;
+    }
+
+</script>
+</body>
+</html>    
+</body>
+</html>
